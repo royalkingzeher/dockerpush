@@ -1,0 +1,11 @@
+# Use the officaial Nginx image as the base image 
+From nginx:latest
+
+# Copy your html file to the default Nginx document root directory
+COPY index.html /usr/shar/nginx/html
+
+# Expose port 80 for incoming HTTP request
+EXPOSE 80
+
+# Start the Nginx server
+CMD ["nginx", "-g", "daemon off;"]
